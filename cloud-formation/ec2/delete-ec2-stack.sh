@@ -1,0 +1,1 @@
+aws cloudformation delete-stack --stack-name guessthename-ec2 --region us-east-1

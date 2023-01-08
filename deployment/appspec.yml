@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+  - source: /docker-compose.yaml
+    destination: /home/ec2-user/
+  - source: /nginx.conf
+    destination: /home/ec2-user/
+hooks:
+  AfterInstall:
+    - location: scripts/install.sh
+      timeout: 300
+      runas: ec2-user

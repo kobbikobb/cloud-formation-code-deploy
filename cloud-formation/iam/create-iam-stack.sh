@@ -1,0 +1,1 @@
+aws cloudformation create-stack --stack-name guessthename-iam --template-body file://iam-stack.yaml --capabilities CAPABILITY_NAMED_IAM --region us-east-1

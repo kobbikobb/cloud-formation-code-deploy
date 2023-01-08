@@ -1,0 +1,47 @@
+---
+Parameters:
+
+  ApplicationName:
+    Type: String
+    Default: guessthename
+
+Resources:
+
+  CodeDeployRole:
+    Type: AWS::IAM::Role
+    Properties: 
+      RoleName: guessthename.deploy.role
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Effect: Allow
+            Principal:
+              Service:
+                - codedeploy.amazonaws.com
+            Action:
+              - sts:AssumeRole
+      Path: /
+      ManagedPolicyArns:
+        - "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"
+        - "arn:aws:iam::aws:policy/AWSCodeDeployRoleForECS"
+
+  GuessthenameApplication:
+    Type: AWS::CodeDeploy::Application
+    Properties:
+      ApplicationName: !Ref ApplicationName 
+      ComputePlatform: Server
+
+  DeploymentGroup:
+    Type: AWS::CodeDeploy::DeploymentGroup
+    DependsOn : GuessthenameApplication
+    Properties:
+      ApplicationName: !Ref ApplicationName
+      DeploymentGroupName: guessthename-dev
+      ServiceRoleArn: !GetAtt CodeDeployRole.Arn
+      Ec2TagFilters:
+        - Key: Environment
+          Value: Dev
+          Type: KEY_AND_VALUE
+        - Key: Application
+          Value: guessthename
+          Type: KEY_AND_VALUE
