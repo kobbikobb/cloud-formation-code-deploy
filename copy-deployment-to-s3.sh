@@ -2,4 +2,6 @@
 
 zip -vr deployment.zip deployment/
 
-aws s3 cp deployment.zip s3://guessthename.codedeploy.bucket/code-deploy-docker-compose.zip
+BUCKET=guessthename.codedeploy.bucket
+
+aws s3 cp deployment.zip s3://$BUCKET/code-deploy-docker-compose.zip
