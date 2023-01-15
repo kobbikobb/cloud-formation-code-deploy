@@ -1,4 +1,4 @@
-Create a simple CD pipeline in AWS
+Create a simple deployment in AWS
 
 # How to deploy with Cloud Formation
 
@@ -10,9 +10,9 @@ Create a simple CD pipeline in AWS
 ./ec2/create-deploy-stack.sh 
 
 # Upload and create a deployment
-./create-s3 copy.sh
-./copy-deployment-to-s3 copy.sh
-./create-code-deploy-deployment.sh
+./scripts/create-s3 copy.sh
+./scripts/copy-deployment-to-s3 copy.sh
+./scripts/create-code-deploy-deployment.sh
 
 # Useful
 
