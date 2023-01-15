@@ -6,8 +6,8 @@ Create a simple deployment in AWS
 - export AWS_PROFILE=user1
 
 ## Create stacks
-./ec2/create-ec2-stack.sh
-./ec2/create-deploy-stack.sh 
+./scripts/ec2/create-ec2-stack.sh
+./scripts/ec2/create-deploy-stack.sh 
 
 # Upload and create a deployment
 ./scripts/create-s3 copy.sh
