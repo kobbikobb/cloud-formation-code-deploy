@@ -25,8 +25,6 @@ Resources:
         - "arn:aws:iam::aws:policy/service-role/AWSCodeDeployRole"
         - "arn:aws:iam::aws:policy/AWSCodeDeployRoleForECS"
 
-  # TODO: S3 bucket
-  
   GuessthenameApplication:
     Type: AWS::CodeDeploy::Application
     Properties:

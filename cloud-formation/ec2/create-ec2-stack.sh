@@ -1,1 +1,1 @@
-aws cloudformation create-stack --stack-name guessthename-ec2 --capabilities CAPABILITY_NAMED_IAM --template-body file://ec2-stack.yaml --region us-east-1
+aws cloudformation create-stack --stack-name guessthename-ec2 --capabilities CAPABILITY_NAMED_IAM --template-body file://cloud-formation/ec2/ec2-stack.yaml --region us-east-1

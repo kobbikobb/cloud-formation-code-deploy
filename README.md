@@ -10,8 +10,8 @@ Create a simple deployment in AWS
 ./cloud-formation/deploy/create-deploy-stack.sh 
 
 # Upload and create a deployment
-./scripts/create-s3 copy.sh
-./scripts/copy-deployment-to-s3 copy.sh
+./scripts/create-s3.sh
+./scripts/copy-deployment-to-s3.sh
 ./scripts/create-code-deploy-deployment.sh
 
 # Useful
