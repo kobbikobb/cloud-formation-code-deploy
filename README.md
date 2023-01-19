@@ -9,6 +9,10 @@ Create a simple deployment in AWS
 ./cloud-formation/ec2/create-ec2-stack.sh
 ./cloud-formation/deploy/create-deploy-stack.sh 
 
+## Delete stacks
+./cloud-formation/ec2/delete-ec2-stack.sh
+./cloud-formation/deploy/delete-deploy-stack.sh 
+
 # Upload and create a deployment
 ./scripts/create-s3.sh
 ./scripts/copy-deployment-to-s3.sh
